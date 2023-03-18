@@ -36,7 +36,7 @@ import java.net.URI;
 import java.util.Locale;
 
 public class LoginController extends DefaultController {
-    private static final String LOGIN_URL = "https://account.xiaomi.com/pass/serviceLogin?sid=unlockApi&json=false&passive=true&hidden=false&_snsDefault=facebook&checkSafePhone=true&_locale=" + Locale.getDefault().getLanguage().toLowerCase();
+private static final String LOGIN_URL = "https://account.xiaomi.com/pass/serviceLogin?sid=unlockApi&json=false&passive=true&hidden=false&_snsDefault=facebook&checkSafePhone=true&_locale=" + Locale.getDefault().getLanguage().toLowerCase();    
     private static boolean loggedIn = false;
     private static Thread loginThread = null;
     @FXML
@@ -202,6 +202,7 @@ public class LoginController extends DefaultController {
         BROWSER_AREA = new VisiblePane(CONTENT);
         BROWSER_AREA.add(LOADING_NODE);
         ENGINE = BROWSER.getEngine();
+        ENGINE.setUserAgent("miNative/1.0");
         ENGINE.load(LOGIN_URL);
         Pointer pointer = new Pointer();
         pointer.pointed = new CookieUtils.EventCookieAdd() {
