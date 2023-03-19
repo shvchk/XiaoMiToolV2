@@ -32,7 +32,7 @@ java {
 }
 
 javafx {
-    version = "17.0.1"
+    version = "19.0.2"
     modules = listOf("javafx.controls", "javafx.fxml", "javafx.web", "javafx.swing")
 }
 
